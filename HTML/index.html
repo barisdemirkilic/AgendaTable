@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Agenda</title>
+  </head>
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="agendaTableDiv">
+      <table border="1" cellspacing="0" cellpadding="10" id="agendaTable">
+        <thead>
+          <tr>
+            <th colspan="21">
+              <button type="button" name="prevWeek" title="Previous week" onclick="updateAgendaDates(1)" style="margin-right: 10px;">&lt;&lt;</button>
+              <button type="button" name="prevDay" title="Previous day" onclick="updateAgendaDates(2)" style="margin-right: 10px;">&lt;</button>
+              <button type="button" name="today" title="Today" onclick="updateAgendaDates(0)">|</button>
+              <button type="button" name="nextDay" title="Next Day" onclick="updateAgendaDates(3)" style="margin-left: 10px;">&gt;</button>
+              <button type="button" name="nextWeek" title="Next Week" onclick="updateAgendaDates(4)" style="margin-left: 10px;">&gt;&gt;</button>
+            </th>
+          </tr>
+          <tr>
+          </tr>
+        </thead>
+        <tbody>
+        </tbody>
+      </table>
+    </div>
+    <script>
+      // Global variables for external JS files
+      let hoursCount = 9; // Hours from 08:00 to 16:00
+      let totalDatesInAgenda = 20;
+      let deletedSubscriptionsArr = new Array(hoursCount);
+      let subscriptionDaysArr = new Array(hoursCount);
+      let singleRecDatesArr = new Array(hoursCount);
+      for (let i = 0; i < hoursCount; i++)
+      {
+        deletedSubscriptionsArr[i] = new Array();
+        subscriptionDaysArr[i] = new Array(false, false, false, false, false, false, false);
+        singleRecDatesArr[i] = new Array();
+      }
+    </script>
+    <script type="text/javascript" src="../JavaScript/createInitialHTML.js"></script>
+    <script type="text/javascript" src="../JavaScript/addCur20DaysToAgenda.js"></script>
+  </body>
+</html>
